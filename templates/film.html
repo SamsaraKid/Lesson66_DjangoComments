@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Film</title>
+</head>
+<body>
+
+    <h2>Фильм</h2>
+    <iframe width="560" height="315" src="{{ kino.link }}"
+            title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write;
+            encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+    <hr>
+
+    <form action="" method="post">
+        {% csrf_token %}
+        <table>{{ forma }}</table>
+        <input type="submit" value="Отправить">
+    </form>
+
+    <hr>
+
+    {% for one in commentsall %}
+        <div>{{ one.name }}</div>
+        <div>{{ one.timedate }}</div>
+        <div>{{ one.body }}</div>
+        <hr>
+    {% endfor %}
+
+</body>
+</html>

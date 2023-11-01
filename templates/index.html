@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Main</title>
+</head>
+<body>
+
+    <h2>Главная</h2>
+
+    {% for one in kino %}
+        <div><a href="{% url 'film' one.id %}">Смотреть фильм "{{ one.title }}"</a></div>
+    {% endfor %}
+
+</body>
+</html>
