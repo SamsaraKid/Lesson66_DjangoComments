@@ -14,3 +14,10 @@ class Comment(models.Model):
     like = models.IntegerField(default=0)
     kino = models.ForeignKey(Kino, on_delete=models.SET_NULL, null=True, blank=True)
 
+
+class BadWord(models.Model):
+    word = models.CharField(max_length=50)
+
+    def __str__(self):
+        return self.word
+
